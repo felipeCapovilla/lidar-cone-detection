@@ -13,9 +13,13 @@ The first step in our pipeline is applying a *Region of Interest (ROI)* filter, 
 This significantly reduces the number of points by removing those that are clearly irrelevant, such as points belonging to the sky.
 
 
-<p align="center">
-  <strong>Original View</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>ROI View</strong><br>
-  <img src="lidar_view.png" width="45%" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="roi_view.png" width="45%" />
-</p>
+<div align="center">
+  <div style="display: inline-block; text-align: center; margin: 0 20px;">
+    <p><strong>Original View</strong></p>
+    <img src="lidar_view.png" width="300px"/>
+  </div>
+  <div style="display: inline-block; text-align: center; margin: 0 20px;">
+    <p><strong>ROI View</strong></p>
+    <img src="roi_view.png" width="300px"/>
+  </div>
+</div>
