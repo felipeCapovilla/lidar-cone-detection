@@ -7,9 +7,13 @@ In the Formula SAE Student Competition, the track is delimited by cones of two d
 ![Preview](pipeline.png)
 
 # How it works
-## ROI Filter
-The first step in our pipeline is applying a *Region of Interest (ROI)* filter, which limits the area of the scene to be processed. This significantly reduces the number of points by removing those that are clearly irrelevant, such as points belonging to the sky.
+## 📌 ROI Filter
+
+The first step in our pipeline is applying a *Region of Interest (ROI)* filter, which limits the area of the scene to be processed.  
+This significantly reduces the number of points by removing those that are clearly irrelevant, such as points belonging to the sky.
+
 <p align="center">
   <img src="lidar_view.png" width="45%" title="Original View"/>
+  &nbsp;&nbsp;&nbsp;
   <img src="roi_view.png" width="45%" title="ROI View"/>
 </p>
