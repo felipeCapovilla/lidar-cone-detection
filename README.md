@@ -12,15 +12,10 @@ In the Formula SAE Student Competition, the track is delimited by cones of two d
 The first step in our pipeline is applying a *Region of Interest (ROI)* filter, which limits the area of the scene to be processed.  
 This significantly reduces the number of points by removing those that are clearly irrelevant, such as points belonging to the sky.
 
-<table align="center">
-  <tr>
-    <th style="text-align:center">Original View</th>
-    <th></th>
-    <th style="text-align:center">ROI View</th>
-  </tr>
-  <tr>
-    <td align="center"><img src="lidar_view.png" width="300px"/></td>
-    <td align="center" style="font-size:30px;">➡️</td>
-    <td align="center"><img src="roi_view.png" width="300px"/></td>
-  </tr>
-</table>
+
+<p align="center">
+  <strong>Original View</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>ROI View</strong><br>
+  <img src="lidar_view.png" width="45%" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="roi_view.png" width="45%" />
+</p>
