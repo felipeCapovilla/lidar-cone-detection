@@ -86,3 +86,6 @@ Once RViz2 is open, do the following:
 3. Choose **By Topic** and select the topics you want to visualize.
 
 We recommend enabling the **artificialLidar** and **visualization_marker** topics to see the original point cloud along with the detected cones.
+
+## Develpoers
+[@felipeCapovilla](https://github.com/felipeCapovilla)
