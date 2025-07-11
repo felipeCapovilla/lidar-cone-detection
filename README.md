@@ -89,3 +89,4 @@ We recommend enabling the **artificialLidar** and **visualization_marker** topic
 
 ## Develpoers
 [@felipeCapovilla](https://github.com/felipeCapovilla)
+[@PedroRomero](https://github.com/PedroRomeroEracing)
