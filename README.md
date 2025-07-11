@@ -22,7 +22,7 @@ MLESAC is a variation of the RANSAC algorithm, which is widely used today due to
 The core idea of the algorithm is simple: it repeatedly samples three random points to define a candidate plane, and then counts how many other points (called **inliers**) lie within a predefined distance threshold from that plane. The plane with the highest number of inliers is assumed to correspond to the ground.
 
 <p align="center">
-  <img src="MLESAC.png" width="70%" alt="ROI View">
+  <img src="MLESAC.png" width="120%" alt="ROI View">
 </p>
 
 This significantly reduces the number of points that need to be processed and increases the likelihood of detecting cones, as it eliminates much of the noise from irrelevant ground points.
