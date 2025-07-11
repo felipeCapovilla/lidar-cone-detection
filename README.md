@@ -27,3 +27,28 @@ The core idea of the algorithm is simple: it repeatedly samples three random poi
 </p>
 <br>
 This significantly reduces the number of points that need to be processed and increases the likelihood of detecting cones, as it eliminates much of the noise from irrelevant ground points.
+
+### 3. DBSCAN
+After applying the region of interest (ROI) filter and removing the ground plane, the next step is to accurately identify the cones present in the scene. To achieve this, we employ the **DBSCAN** clustering algorithm, followed by a set of geometric validation filters.
+
+**DBSCAN** (*Density-Based Spatial Clustering of Applications with Noise*) is a density-based clustering method that identifies clusters as areas of high point density separated by regions of low density. In our context, these dense regions within the 3D LiDAR point cloud likely correspond to cones placed on the track to define its boundaries.
+<br>
+<p align="center">
+  <img src="dbscan.png" width="80%" alt="ROI View">
+</p>
+<br>
+However, DBSCAN alone is not sufficient, as it may also cluster spurious objects—such as a discarded water bottle or debris on the road—as valid cones due to their high local point density. To address this issue and improve robustness, we apply two additional filters:
+
+1. **Geometric Fitting Filter**: For each cluster identified by DBSCAN, we attempt to fit a geometric model corresponding to the expected shape of a cone. If the fitting error exceeds a predefined threshold or if the shape is inconsistent with known cone dimensions (e.g., height-to-base ratio), the cluster is discarded.
+<p>
+
+2. **Axial Symmetry Filter**: Traffic cones are symmetric around their vertical axis. We evaluate the spatial distribution of points in each cluster to verify this symmetry. Clusters that exhibit significant asymmetry are considered false positives and are also removed.
+
+By combining density-based clustering with geometric and symmetry validation, we construct a highly reliable and precise pipeline for detecting cones using LiDAR data. This approach significantly reduces false detections and enhances the autonomy and safety of our perception system.
+
+## Results
+<br>
+<p align="center">
+  <img src="results.png" width="100%" alt="ROI View">
+</p>
+<br>
