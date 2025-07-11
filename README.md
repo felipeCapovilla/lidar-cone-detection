@@ -12,7 +12,7 @@ The first step in our pipeline is applying a *Region of Interest (ROI)* filter, 
 This significantly reduces the number of points by removing those that are clearly irrelevant, such as points belonging to the sky.
 
 <p align="center">
-  <img src="roi_filter.png" width="60%" alt="ROI View">
+  <img src="roi_filter.png" width="80%" alt="ROI View">
 </p>
 
 It basically defines a 3D rectangular region within the point cloud received from the LiDAR, using predefined limits in the x, y, and z dimensions. Any point outside this region is excluded from the pipeline.
@@ -21,8 +21,9 @@ It basically defines a 3D rectangular region within the point cloud received fro
 MLESAC is a variation of the RANSAC algorithm, which is widely used today due to its effectiveness in robust model fitting. In our case, we use MLESAC to identify the plane that best represents the ground surface in the point cloud. Once this plane is detected, it is removed from the data.
 The core idea of the algorithm is simple: it repeatedly samples three random points to define a candidate plane, and then counts how many other points (called **inliers**) lie within a predefined distance threshold from that plane. The plane with the highest number of inliers is assumed to correspond to the ground.
 
+<br>
 <p align="center">
   <img src="MLESAC.png" width="80%" alt="ROI View">
 </p>
-
+<br>
 This significantly reduces the number of points that need to be processed and increases the likelihood of detecting cones, as it eliminates much of the noise from irrelevant ground points.
