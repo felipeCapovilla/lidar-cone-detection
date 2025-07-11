@@ -54,3 +54,35 @@ By combining density-based clustering with geometric and symmetry validation, we
 <br>
 
 ## How to use
+### 1. Requirements
+
+After cloning the repository, you need to install all the required dependencies. Please run the following commands **in this order**:
+
+`cd path/to/ws/PipelineWorkspace`
+`sudo apt update`
+`rosdep install -from-path src --ignore-src -r -y`
+`pip install -r requirements.txt`
+
+After installing all dependencies, you will have to build the workspace, for 
+this in the /src folder run:
+
+`colcon build --symlink-install`
+`source install/setup.bash`
+
+Then you're ready to start using our nodes.
+
+### 2. Running the nodes
+
+To run the project, you need to start two nodes: **dataSender** and **dataProcessing**.
+From the /src folder, open two separate terminals and run the following commands:
+`ros2 run lidar_pkg dataSender` and in the other terminal: `ros2 run lidar_pkg dataProcessing`.
+If both nodes start successfully and run without errors, the project is working correctly.
+
+### 3. Results view
+To visualize the project results in real-time, keep both nodes running and open a new terminal. Then, launch RViz2 by typing: `rviz2`
+Once RViz2 is open, do the following:
+1. In the top-right corner, set the **Fixed Frame** to `lidar_frame`.
+2. At the bottom of the screen, click **Add**.
+3. Choose **By Topic** and select the topics you want to visualize.
+
+We recommend enabling the **artificialLidar** and **visualization_marker** topics to see the original point cloud along with the detected cones.
