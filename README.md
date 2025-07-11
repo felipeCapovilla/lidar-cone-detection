@@ -52,3 +52,5 @@ By combining density-based clustering with geometric and symmetry validation, we
   <img src="results.png" width="100%" alt="ROI View">
 </p>
 <br>
+
+## How to use
